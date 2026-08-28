@@ -1,0 +1,65 @@
+# ==============================
+# Visual Studio / .NET
+# ==============================
+.vs/
+**/.vs/
+**/bin/
+**/obj/
+
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+
+# ==============================
+# React / Node.js
+# ==============================
+node_modules/
+**/node_modules/
+
+dist/
+**/dist/
+
+.vite/
+**/.vite/
+
+
+# ==============================
+# Application Logs
+# ==============================
+Logs/
+**/Logs/
+*.log
+application.txt
+
+
+# ==============================
+# Environment / Secrets
+# ==============================
+.env
+.env.*
+!.env.example
+
+secrets.json
+
+
+# ==============================
+# Visual Studio Code
+# ==============================
+.vscode/
+
+
+# ==============================
+# Operating System
+# ==============================
+.DS_Store
+Thumbs.db
+
+
+# ==============================
+# Temporary Files
+# ==============================
+*.tmp
+*.temp
+*.cache
