@@ -8,7 +8,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllers();
 
-// Canlı ortam ve Local için esnek CORS ayarı
+// CORS Ayarı
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("FrontendPolicy", policy =>
@@ -43,9 +43,19 @@ builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
 
-// Swagger canlıda da açık olsun
-app.UseSwagger();
-app.UseSwaggerUI();
+// Swagger Yapılandırması
+app.UseSwagger(c =>
+{
+    c.RouteTemplate = "swagger/{documentName}/swagger.json";
+});
+
+app.UseSwaggerUI(c =>
+{
+    c.SwaggerEndpoint("/swagger/v1/swagger.json", "QradarLogSystem API v1");
+    c.RoutePrefix = "swagger";
+});
+
+app.UseRouting();
 
 app.UseCors("FrontendPolicy");
 
